@@ -1,0 +1,11 @@
+Nom_Promoteur : BHCI
+Nom_Programme: BHCI
+Type_de_logement: Duplex
+Nombre de pièces:  10 pièces
+Localisation:BASSAM 
+Gps: n.a
+Superficie: 347 m²
+Prix:  n.a FCFA
+
+
+

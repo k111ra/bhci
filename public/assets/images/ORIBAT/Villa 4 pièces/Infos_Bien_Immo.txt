@@ -1,0 +1,11 @@
+Nom_Promoteur : ORIBAT
+Nom_Programme: ORIBOUAKE
+Type_de_logement: Villa
+Nombre de pièces:  4 pièces
+Localisation: Bouaké
+Gps: n.a
+Superficie: 175 m²
+Prix:  18 668 752 FCFA
+
+
+

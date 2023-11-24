@@ -1,0 +1,11 @@
+Nom_Promoteur : BHCI
+Nom_Programme: BHCI
+Type_de_logement: Terrain
+Nombre de pièces:  n.a
+Localisation: Yopougon
+Gps: n.a
+Superficie: 5 Hectares
+Prix:  n.a
+
+
+

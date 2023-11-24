@@ -154,7 +154,6 @@
 
     <div class="container" style="margin-top: 100px;">
         <div class="row">
-
             <div class="col-md-4">
                 <div id="carouselExample1" class="carousel slide r-top" data-ride="carousel">
                     <div class="carousel-inner">
@@ -178,13 +177,8 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-7">
-                                <a href="/detail-bien">
-                                    <span>Maison <span>4 pieces 143 m2</span></span>
-
-                                </a>
-
+                                <span>Maison <span>4 pieces 143 m2</span></span>
                             </div>
-
                             <div class="col-md-5">
                                 <span style="color: #ad8b3a;"> 26 500 000 FCFA</span>
                             </div>

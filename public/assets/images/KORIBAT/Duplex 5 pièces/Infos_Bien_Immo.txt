@@ -1,0 +1,11 @@
+Nom_Promoteur : KORIBAT
+Nom_Programme: IRIS 2
+Type_de_logement: Duplex
+Nombre de pièces:  5 pièces
+Localisation: BINGERVILLE
+Gps: n.a
+Superficie: 300 m²
+Prix:  125 000 000 FCFA
+
+
+

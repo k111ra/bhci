@@ -1,0 +1,11 @@
+Nom_Promoteur : FIHAOUAT
+Nom_Programme: BAIE DES MILLIADAIRES
+Type_de_logement: Terrain
+Nombre de pièces:  n.a
+Localisation: Port-Bouët
+Gps: n.a
+Superficie: 500 m²
+Prix:  31 500 000 FCFA
+
+
+

@@ -1,0 +1,11 @@
+Nom_Promoteur : AEBI
+Nom_Programme: DANZE 2
+Type_de_logement: Villa
+Nombre_de_pieces:  3 pièces
+Localisation: Songon Kassemblé
+Gps: n.a
+Superficie: 165 m²
+Prix:  26 500 000 FCFA
+
+
+

@@ -1,0 +1,11 @@
+Nom_Promoteur : E2JS
+Nom_Programme: Les résidences BLEDJA
+Type_de_logement: Villa
+Nombre_de_pieces:  4 pièces
+Localisation: Bingerville
+Gps: n.a
+Superficie: 250 m²
+Prix: 45 000 000 FCFA
+
+
+

@@ -1,0 +1,11 @@
+Nom_Promoteur : AMS
+Nom_Programme: Cité LILIUM
+Type_de_logement: Villa
+Nombre_de_pieces:  3 pièces
+Localisation: ANYAMA Ebimpé
+Gps: n.a
+Superficie: 120 m²
+Prix:  22 360 000 FCFA
+
+
+

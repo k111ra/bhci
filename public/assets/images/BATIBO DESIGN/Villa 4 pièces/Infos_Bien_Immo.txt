@@ -1,0 +1,11 @@
+Nom_Promoteur : BATIBO DESIGN
+Nom_Programme: CITE FACERY
+Type_de_logement: Villa
+Nombre_de_pieces:  4 & 5 pièces
+Localisation: Bingerville
+Gps: n.a
+Superficie: 250 à 400 m²
+Prix:  60 000 000 FCFA
+
+
+

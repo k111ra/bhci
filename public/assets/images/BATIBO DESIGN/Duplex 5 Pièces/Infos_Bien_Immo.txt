@@ -1,0 +1,11 @@
+Nom_Promoteur : BATIBO DESIGN
+Nom_Programme: CITE FACERY
+Type_de_logement: Duplex
+Nombre_de_pieces:  5 pièces
+Localisation: Bingerville
+Gps: n.a
+Superficie: 300 m²
+Prix:  130 000 000 FCFA
+
+
+

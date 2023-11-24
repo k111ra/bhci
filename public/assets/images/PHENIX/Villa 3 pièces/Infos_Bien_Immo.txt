@@ -1,0 +1,11 @@
+Nom_Promoteur : PHENIX
+Nom_Programme: LA CITE DU DELTA
+Type_de_logement: Villa
+Nombre de piEces:  3 pièces
+Localisation: BASSAM
+Gps: n.a
+Superficie: 170 m²
+Prix:  35 000 000 FCFA
+
+
+

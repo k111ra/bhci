@@ -1,0 +1,11 @@
+Nom_Promoteur : SAFARI 
+Nom_Programme: CITE ALLURE
+Type_de_logement: Villa
+Nombre de pièces: 4 pièces
+Localisation: SONGON Kassemblé
+Gps: n.a
+Superficie: 250 m²
+Prix:  31 000 000 FCFA
+
+
+

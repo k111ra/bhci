@@ -1,0 +1,8 @@
+Nom_Promoteur : BHCI
+Nom_Programme: BHCI
+Type_de_logement: Complexe hôtelier
+Nombre de pièces:  n.a
+Localisation: COCODY
+Gps: n.a
+Superficie: 1478 m²
+Prix: n.a FCFA

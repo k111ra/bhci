@@ -1,0 +1,56 @@
+.custom-dropdown-toggle {
+    background-color: #fff; /* Fond blanc */
+    border: 1px solid #ccc; /* Bordure grise */
+    border-radius: 7px;
+    margin: 5px;
+    padding: 5px 10px; /* Ajout de l'espace entre le texte et la bordure */
+}
+
+.custom-dropdown-menu {
+    border: 1px solid #ccc; /* Bordure grise pour le menu déroulant */
+    width: 400px; /* Ajustez la largeur du dropdown selon vos besoins */
+}
+
+.custom-dropdown-menu a {
+    color: #000; /* Couleur du texte du menu déroulant */
+}
+
+.custom-dropdown-menu a:hover {
+    background-color: #f8f9fa; /* Couleur de survol du menu déroulant */
+}
+
+
+
+.navbar {
+    box-shadow: 0px 5px 5px -5px #888888;
+}
+
+.nav-item {
+    padding-left: 20px;
+}
+
+
+/* ======== card slider ================= */
+
+.carousel {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    /* padding-top: 10px; */
+}
+
+.r-top {
+    border-radius: 20px 20px 0 0; /* Ajout de bordures arrondies uniquement en haut */
+    overflow: hidden; /* Pour cacher le contenu qui déborde des coins arrondis */
+}
+
+.r-bottom {
+    border-radius: 0 0 20px 20px; /* Ajout de bordures arrondies uniquement en haut */
+    overflow: hidden; /* Pour cacher le contenu qui déborde des coins arrondis */
+    /* border-bottom: 5px solid #8B4513; Marron */
+
+}
+.card-body{
+
+        border-bottom: 5px solid #ad8b3a;
+}
+
