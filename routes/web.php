@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BienController;
+use App\Http\Controllers\PromoteurController;
+use App\Http\Controllers\TypeBienController;
 use Illuminate\Support\Facades\Route;
+use Spatie\FlareClient\FlareMiddleware\AddEnvironmentInformation;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +18,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [BienController::class, 'show']);
 
 Route::get('/detail_bien', function () {
     return view('detail_bien');
 });
 
-Route::get('/biens', [BienController::class, 'index'])->name('biens.index');
 Route::get('/biens/{id}', [BienController::class, 'show'])->name('biens.show');
+
+Route::resource('type-biens', TypeBienController::class);
+Route::resource('promoteurs', PromoteurController::class);
+Route::resource('biens', BienController::class);
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
