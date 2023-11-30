@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BienController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('/detail_bien', function () {
+    return view('detail_bien');
+});
+
+Route::get('/biens', [BienController::class, 'index'])->name('biens.index');
+Route::get('/biens/{id}', [BienController::class, 'show'])->name('biens.show');

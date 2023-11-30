@@ -54,3 +54,23 @@
         border-bottom: 5px solid #ad8b3a;
 }
 
+/* Sélectionnez tous les liens et enlevez le soulignement */
+a {
+    text-decoration: none;
+}
+
+/* Si vous voulez spécifier un style différent pour les liens visités */
+a:visited {
+    /* Styles pour les liens visités */
+}
+
+/* Si vous voulez spécifier un style différent pour les liens au survol */
+a:hover {
+    /* Styles pour les liens au survol */
+}
+
+/* Si vous voulez spécifier un style différent pour les liens actifs (lorsqu'ils sont cliqués) */
+a:active {
+    /* Styles pour les liens actifs */
+}
+
