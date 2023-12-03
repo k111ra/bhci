@@ -25,9 +25,9 @@ class BienController extends Controller
             'type_bien_id' => 'required',
             'nom' => 'required',
             'localisation' => '',
-            'prix' => 'required',
-            'surfaces' => 'required',
-            'nbr_piece' => 'required',
+            'prix' => '',
+            'surfaces' => '',
+            'nbr_piece' => '',
             'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Validation des images
         ], [
             'images.*.image' => 'Le fichier doit être une image.',
@@ -61,6 +61,12 @@ class BienController extends Controller
         $biens = Bien::all();
         return view('index')->with('biens', $biens);
     }
+
+    public function showDetails($id) {
+        $details = Bien::findOrFail($id);
+        return view('detail_bien')->with('details', $details);
+    }
+
 
 
 }

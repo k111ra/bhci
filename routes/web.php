@@ -20,9 +20,7 @@ use Spatie\FlareClient\FlareMiddleware\AddEnvironmentInformation;
 
 Route::get('/', [BienController::class, 'show']);
 
-Route::get('/detail_bien', function () {
-    return view('detail_bien');
-});
+Route::get('/detail_bien/{id}', [BienController::class, 'showDetails'])->name('bien.details');
 
 Route::get('/biens/{id}', [BienController::class, 'show'])->name('biens.show');
 

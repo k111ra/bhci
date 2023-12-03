@@ -57,6 +57,8 @@
 /* Sélectionnez tous les liens et enlevez le soulignement */
 a {
     text-decoration: none;
+    color: inherit;
+    font-weight:bold;
 }
 
 /* Si vous voulez spécifier un style différent pour les liens visités */
@@ -72,5 +74,9 @@ a:hover {
 /* Si vous voulez spécifier un style différent pour les liens actifs (lorsqu'ils sont cliqués) */
 a:active {
     /* Styles pour les liens actifs */
+}
+
+.TypeBien{
+    font-weight:500;
 }
 

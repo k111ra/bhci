@@ -12,44 +12,122 @@
 </head>
 
 <body>
+
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-6">
-                <div id="carouselExample1" class="carousel slide r-top" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="{{ asset('assets/images/AEBI-/Villa-3-pièces/Image1.png') }}" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{ asset('assets/images/AEBI-/Villa-3-pièces/Infos_Bien_Immo.txt') }}" class="d-block w-100" alt="...">
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExample1" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExample1" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+            <div class="col-sm-4">
+                <div class="TypeBien" style="font-weight: 500; font-size: 4rem;">
+                    <span>
+                        <span>{{ $details->typeBien->nom }}</span> à vendre
+                    </span>
+                    <span>
+                        <span>{{ $details->nbr_piece }}</span>.{{ $details->surfaces }}
+                    </span>
+                </div>
+                <br>
+                <div class="" style="">
+                    <span>
+                        <span style="font-size: 20px"><i class="fa-solid fa-location-dot" style="color: #ad8b3a"></i>
+                            {{ $details->localisation }}</span>
+                    </span>
+
+                </div>
+
+                <div class="TypeBien" style="font-weight: 500; font-size: 4rem; color:#ad8b3a;">
+                    <span>
+                        <span>{{ $details->prix }}</span>
+                    </span>
+
+                </div>
+                <div>
+                    <img src="public/images/promoteurs/{{ $details->promoteur->logo }}" width="200px" alt="">
+                    {{-- {{ dd($details->promoteur->logo) }} --}}
+                    <span>{{ $details->promoteur->nom }}</span>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="card r-bottom">
-                    <div class="card-body">
-                        <h5 class="card-title">Maison 4 pièces 143 m2</h5>
-                        <p class="card-text">DANZE 2</p>
-                        <p class="card-text" style="color: #ad8b3a;">26 500 000 FCFA</p>
-                        <hr>
-                        <h6 class="card-subtitle mb-2 text-muted">Informations supplémentaires</h6>
-                        <ul>
-                            <li><strong>Localisation:</strong> <!-- Ajoute la localisation du bien ici --></li>
-                            <li><strong>Prix:</strong> <!-- Ajoute le prix du bien ici --></li>
-                            <li><strong>Surface:</strong> <!-- Ajoute la surface du bien ici --></li>
-                            <li><strong>Nombre de pièces:</strong> <!-- Ajoute le nombre de pièces du bien ici --></li>
-                        </ul>
+            <div class="col-sm-4">
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="{{ asset('assets/images/AMS/Villa-3-pieces/Image1.jpg') }}" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="{{ asset('assets/images/AEBI-/Villa-5-Pieces/Infos_Bien_Immo.txt') }}" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="{{ asset('assets/images/AEBI-/Villa-3-pieces/Image1.png') }}" class="d-block w-100" alt="...">
+                      </div>
                     </div>
-                </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+            </div>
+            <div class="col-sm-4">
+                <form>
+                    <div>
+                        <span style="font-weight: 500; font-size: 20px; color:#ad8b3a;">
+                            Ce bien vous intéresse ?
+                        </span>
+                        <br>
+                        Contactez vite l'agence pour le visiter !
+                    </div>
+                    <div class="row mt-3">
+                        <div class="form-group col-md-6">
+                            <label for="nom">Nom</label>
+                            <input type="text" class="form-control" id="nom" placeholder="Nom">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="prenom">Prenoms</label>
+                            <input type="text" class="form-control" id="prenom" placeholder="Prenoms">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="form-group col">
+                            <label for="inputEmail4">Email</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone">Telephone</label>
+                        <input type="tel" class="form-control" id="telephone" placeholder="+225...">
+                    </div>
+                    <div class="form-group">
+                        <label for="adresse">Adresse</label>
+                        <input type="text" class="form-control" id="adresse"
+                            placeholder="Cocody Boulevard Koffi GADHO ">
+                    </div>
+                    <div class="row mt-3">
+                        <div class="check ">
+                            <div>
+                                <span>
+                                    Vous preferez etre contacte par :
+                                </span>
+                            </div>
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                Email
+                            </label>
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                Telephone
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Je veux..." id="message" style="height: 100px"></textarea>
+                            <label for="message">Message</label>
+                          </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Envoyer</button>
+                </form>
             </div>
         </div>
     </div>
