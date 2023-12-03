@@ -13,9 +13,9 @@
 
 <body>
 
-    <div class="container mt-5">
+    <div class=" mt-5">
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-3 " style="padding-top: 15px;"">
                 <div class="TypeBien" style="font-weight: 500; font-size: 4rem; color:#ad8b3a;">
                     <span>{{ $details->typeBien->nom }} à vendre</span>
                     <span>{{ $details->nbr_piece }}.{{ $details->surfaces }}</span>
@@ -36,13 +36,13 @@
                     <span>{{ $details->promoteur->nom }}</span>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-5" style="padding-top: 15px;">
                 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         @foreach ($details->images as $key => $image)
                             <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
                                 <img src="{{ asset('storage/images/' . $image) }}" class="d-block w-100"
-                                    alt="Image {{ $key + 1 }}">
+                                    alt="Image {{ $key + 1 }}" style="object-fit: cover; height: 600px;">
                             </div>
                         @endforeach
                     </div>
