@@ -16,58 +16,50 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-sm-4">
-                <div class="TypeBien" style="font-weight: 500; font-size: 4rem;">
-                    <span>
-                        <span>{{ $details->typeBien->nom }}</span> à vendre
-                    </span>
-                    <span>
-                        <span>{{ $details->nbr_piece }}</span>.{{ $details->surfaces }}
-                    </span>
+                <div class="TypeBien" style="font-weight: 500; font-size: 4rem; color:#ad8b3a;">
+                    <span>{{ $details->typeBien->nom }} à vendre</span>
+                    <span>{{ $details->nbr_piece }}.{{ $details->surfaces }}</span>
                 </div>
                 <br>
-                <div class="" style="">
-                    <span>
-                        <span style="font-size: 20px"><i class="fa-solid fa-location-dot" style="color: #ad8b3a"></i>
-                            {{ $details->localisation }}</span>
+                <div>
+                    <span style="font-size: 20px">
+                        <i class="fa-solid fa-location-dot" style="color: #ad8b3a"></i> {{ $details->localisation }}
                     </span>
-
                 </div>
 
-                <div class="TypeBien" style="font-weight: 500; font-size: 4rem; color:#ad8b3a;">
-                    <span>
-                        <span>{{ $details->prix }}</span>
-                    </span>
-
+                <div class="TypeBien" style="font-weight: 500; font-size: 4rem;">
+                    <span>{{ $details->prix }}</span>
                 </div>
                 <div>
-                    <img src="public/images/promoteurs/{{ $details->promoteur->logo }}" width="200px" alt="">
-                    {{-- {{ dd($details->promoteur->logo) }} --}}
+                    <img src="{{ asset('public/images/promoteurs/' . $details->promoteur->logo) }}" width="200px"
+                        alt="">
                     <span>{{ $details->promoteur->nom }}</span>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="{{ asset('assets/images/AMS/Villa-3-pieces/Image1.jpg') }}" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="{{ asset('assets/images/AEBI-/Villa-5-Pieces/Infos_Bien_Immo.txt') }}" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="{{ asset('assets/images/AEBI-/Villa-3-pieces/Image1.png') }}" class="d-block w-100" alt="...">
-                      </div>
+                        @foreach ($details->images as $key => $image)
+                            <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
+                                <img src="{{ asset('storage/images/' . $image) }}" class="d-block w-100"
+                                    alt="Image {{ $key + 1 }}">
+                            </div>
+                        @endforeach
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
                     </button>
-                  </div>
+                </div>
             </div>
+
+
             <div class="col-sm-4">
                 <form>
                     <div>
@@ -92,7 +84,6 @@
                             <label for="inputEmail4">Email</label>
                             <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
                         </div>
-
                     </div>
                     <div class="form-group">
                         <label for="telephone">Telephone</label>
@@ -104,10 +95,10 @@
                             placeholder="Cocody Boulevard Koffi GADHO ">
                     </div>
                     <div class="row mt-3">
-                        <div class="check ">
+                        <div class="check">
                             <div>
                                 <span>
-                                    Vous preferez etre contacte par :
+                                    Vous préférez être contacté par :
                                 </span>
                             </div>
                             <input class="form-check-input" type="checkbox" id="gridCheck">
@@ -124,7 +115,7 @@
                         <div class="form-floating">
                             <textarea class="form-control" placeholder="Je veux..." id="message" style="height: 100px"></textarea>
                             <label for="message">Message</label>
-                          </div>
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary mt-3">Envoyer</button>
                 </form>

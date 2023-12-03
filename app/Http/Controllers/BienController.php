@@ -52,17 +52,20 @@ class BienController extends Controller
             // Ajout des chemins des images à la base de données
             $bien->update(['images' => $imagePaths]);
         }
-        $bien -> save();
+
         // Redirection vers la page souhaitée après avoir ajouté le bien
         return redirect()->route('biens.index')->with('message', 'Bien ajouté avec succès!');
     }
 
-    public function show() {
+
+    public function show()
+    {
         $biens = Bien::all();
         return view('index')->with('biens', $biens);
     }
 
-    public function showDetails($id) {
+    public function showDetails($id)
+    {
         $details = Bien::findOrFail($id);
         return view('detail_bien')->with('details', $details);
     }

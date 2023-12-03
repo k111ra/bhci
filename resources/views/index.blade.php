@@ -5,24 +5,25 @@
         <div class="row">
             @foreach ($biens as $bien)
                 <div class="col-md-4" style="padding-top: 15px;">
-                    <div id="carousel{{ $bien->id }}" class="carousel slide r-top" data-ride="carousel">
+                    <div id="carousel{{ $bien->id }}" class="carousel r-top slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            @foreach ($bien->images as $index => $image)
-                                <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                                    <img class="d-block w-100" src="{{ asset('storage/images/' . $image) }}" alt="Slide {{ $index + 1 }}">
+                            @foreach ($bien->images as $key => $image)
+                                <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
+                                    <img src="{{ asset('storage/images/' . $image) }}" class="d-block w-100 img-fluid"
+                                        alt="Image {{ $key + 1 }}" style="object-fit: cover; height: 300px;">
                                 </div>
                             @endforeach
                         </div>
-                        <a class="carousel-control-prev" href="#carousel{{ $bien->id }}" role="button"
-                            data-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel{{ $bien->id }}"
+                            data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carousel{{ $bien->id }}" role="button"
-                            data-slide="next">
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel{{ $bien->id }}"
+                            data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
                     <div class="card r-bottom">
                         <a href="{{ route('bien.details', $bien->id) }}" style="text-decoration: none;">
