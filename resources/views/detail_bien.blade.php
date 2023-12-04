@@ -13,9 +13,9 @@
 
 <body>
 
-    <div class=" mt-5">
+    <div class=" mt-5" style="padding: 0 10px 0 10px">
         <div class="row">
-            <div class="col-sm-3 " style="padding-top: 15px;"">
+            <div class="col-sm-3 " style="padding-top: 15px;">
                 <div class="TypeBien" style="font-weight: 500; font-size: 4rem; color:#ad8b3a;">
                     <span>{{ $details->typeBien->nom }} à vendre</span>
                     <span>{{ $details->nbr_piece }}.{{ $details->surfaces }}</span>
@@ -31,9 +31,9 @@
                     <span>{{ $details->prix }}</span>
                 </div>
                 <div>
-                    <img src="{{ asset('public/images/promoteurs/' . $details->promoteur->logo) }}" width="200px"
+                    <img src="{{ asset('images/promoteurs/' . $details->promoteur->logo) }}" width="200px"
                         alt="">
-                    <span>{{ $details->promoteur->nom }}</span>
+                    {{-- <span>{{ $details->promoteur->nom }}</span> --}}
                 </div>
             </div>
             <div class="col-sm-5" style="padding-top: 15px;">
