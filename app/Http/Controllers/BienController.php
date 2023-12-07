@@ -66,10 +66,10 @@ class BienController extends Controller
 
     public function show()
 {
-    $types = TypeBien::all();
+    $typeBiens = TypeBien::all();
     $biens = Bien::all();
     $promoteurs = Promoteur::all();
-    return view('index', compact('biens', 'types', 'promoteurs'));
+    return view('index', compact('biens', 'typeBiens', 'promoteurs'));
 }
 
 
