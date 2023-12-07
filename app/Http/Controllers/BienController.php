@@ -75,8 +75,14 @@ class BienController extends Controller
 
     public function showDetails($id)
     {
+        $typeBiens = TypeBien::all();
+        $promoteurs = Promoteur::all();
         $details = Bien::findOrFail($id);
-        return view('detail_bien')->with('details', $details);
+        return view('detail_bien')->with([
+            'details' => $details,
+            'typeBiens' => $typeBiens,
+            'promoteurs' => $promoteurs
+        ]);
     }
 
     public function filtrer(Request $request)
