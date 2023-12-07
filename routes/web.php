@@ -28,3 +28,5 @@ Route::resource('type-biens', TypeBienController::class);
 Route::resource('promoteurs', PromoteurController::class);
 Route::resource('biens', BienController::class);
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::post('/filtrer-biens', [BienController::class, 'filtrer'])->name('filtrer.biens');
+

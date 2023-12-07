@@ -9,11 +9,18 @@ use App\Models\TypeBien;
 
 class BienController extends Controller
 {
+    private $promoteurs;
+    private $typeBiens;
+
+    public function __construct()
+    {
+        $this->promoteurs = Promoteur::all();
+        $this->typeBiens = TypeBien::all();
+    }
+
     public function index()
     {
         $biens = Bien::all();
-        $promoteurs = Promoteur::all();
-        $typeBiens = TypeBien::all();
         return view('admin.biens.addBien', compact('biens', 'promoteurs', 'typeBiens'));
     }
 
@@ -25,9 +32,9 @@ class BienController extends Controller
             'type_bien_id' => 'required',
             'nom' => 'required',
             'localisation' => '',
-            'prix' => '',
-            'surfaces' => '',
-            'nbr_piece' => '',
+            'prix' => 'numeric',
+            'surfaces' => 'numeric',
+            'nbr_piece' => 'numeric',
             'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Validation des images
         ], [
             'images.*.image' => 'Le fichier doit être une image.',
@@ -57,17 +64,67 @@ class BienController extends Controller
         return redirect()->route('biens.index')->with('message', 'Bien ajouté avec succès!');
     }
 
-
     public function show()
-    {
-        $biens = Bien::all();
-        return view('index')->with('biens', $biens);
-    }
+{
+    $types = TypeBien::all();
+    $biens = Bien::all();
+    $promoteurs = Promoteur::all();
+    return view('index', compact('biens', 'types', 'promoteurs'));
+}
+
 
     public function showDetails($id)
     {
         $details = Bien::findOrFail($id);
         return view('detail_bien')->with('details', $details);
+    }
+
+    public function filtrer(Request $request)
+    {
+        $promoteurs = Promoteur::all();
+        $typeBiens = TypeBien::all();
+        $types = $request->input('types');
+        $localisation = $request->input('localisation');
+        $prixMin = $request->input('prixMin');
+        $prixMax = $request->input('prixMax');
+        $superficieMin = $request->input('superficieMin');
+        $superficieMax = $request->input('superficieMax');
+        $promoteur = $request->input('promoteur');
+        $nbrePieceMin = $request->input('nbrePieceMin');
+        $nbrePieceMax = $request->input('nbrePieceMax');
+
+        // Construction de la requête en fonction des critères
+        $query = Bien::query();
+
+        if ($types && is_array($types)) {
+            $query->whereIn('type_bien_id', $types);
+        }
+
+        if ($localisation) {
+            $query->where('localisation', 'like', "%$localisation%");
+        }
+
+        if ($prixMin && $prixMax) {
+            $query->whereBetween('prix', [$prixMin, $prixMax]);
+        }
+
+        if ($superficieMin && $superficieMax) {
+            $query->whereBetween('surfaces', [$superficieMin, $superficieMax]);
+        }
+
+        if ($promoteur) {
+            $query->where('promoteur_id', $promoteur);
+        }
+
+        if ($nbrePieceMin && $nbrePieceMax) {
+            $query->whereBetween('nbr_piece', [$nbrePieceMin, $nbrePieceMax]);
+        }
+
+        // Exécution de la requête
+        $biens = $query->get();
+
+        // Retournez la vue avec les biens filtrés
+        return view('index', compact('biens','typeBiens','promoteurs'));
     }
 
 
